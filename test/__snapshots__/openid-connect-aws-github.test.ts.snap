@@ -9,6 +9,14 @@ exports[`Match with snapshot 1`] = `
       "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
+  "Resources": {
+    "GithubOidcProvider": {
+      "Properties": {
+        "Url": "https://token.actions.githubusercontent.com",
+      },
+      "Type": "AWS::IAM::OIDCProvider",
+    },
+  },
   "Rules": {
     "CheckBootstrapVersion": {
       "Assertions": [
