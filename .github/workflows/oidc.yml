@@ -14,9 +14,9 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: eu-west-1
-          role-to-assume: arn:aws:iam::012345678912:role/github-oidc-role
+          role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/github-oidc-role
           
       - name: Invoke AWS action
         run: |
-          npm ci
-          npx cdk diff
+          npm install -g aws-cdk
+          cdk diff
