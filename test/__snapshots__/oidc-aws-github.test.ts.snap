@@ -28,7 +28,7 @@ exports[`Match with snapshot 1`] = `
               "Condition": {
                 "StringEquals": {
                   "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-                  "token.actions.githubusercontent.com:sub": "repo:mellevanderlinde/openid-connect-aws-github:ref:refs/heads/main",
+                  "token.actions.githubusercontent.com:sub": "repo:mellevanderlinde/oidc-aws-github:ref:refs/heads/main",
                 },
               },
               "Effect": "Allow",

@@ -1,8 +1,8 @@
 {
-  "name": "openid-connect-aws-github",
+  "name": "oidc-aws-github",
   "version": "0.1.0",
   "bin": {
-    "openid-connect-aws-github": "bin/openid-connect-aws-github.js"
+    "oidc-aws-github": "bin/oidc-aws-github.js"
   },
   "scripts": {
     "build": "tsc",

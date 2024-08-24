@@ -1,7 +1,7 @@
 import { Stack, StackProps, aws_iam as iam } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-export class OpenidConnectAwsGithubStack extends Stack {
+export class OidcAwsGithubStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
@@ -14,7 +14,7 @@ export class OpenidConnectAwsGithubStack extends Stack {
       StringEquals: {
         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
         "token.actions.githubusercontent.com:sub":
-          "repo:mellevanderlinde/openid-connect-aws-github:ref:refs/heads/main",
+          "repo:mellevanderlinde/oidc-aws-github:ref:refs/heads/main",
       },
     };
 

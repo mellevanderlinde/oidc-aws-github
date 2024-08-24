@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/openid-connect-aws-github.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/oidc-aws-github.ts",
   "watch": {
     "include": [
       "**"
