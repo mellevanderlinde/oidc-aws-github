@@ -7,6 +7,9 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Assume OIDC role
         uses: aws-actions/configure-aws-credentials@v4
         with:
