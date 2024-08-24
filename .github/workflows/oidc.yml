@@ -1,0 +1,19 @@
+on: push
+
+jobs:
+  oidc:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assume OIDC role
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: eu-west-1
+          role-to-assume: arn:aws:iam::${{ secrets.ACCOUNT_ID }}:role/github-oidc-role # TODO replace with dummy account ID
+          
+      - name: Invoke AWS action
+        run: |
+          npm ci
+          npx cdk diff
