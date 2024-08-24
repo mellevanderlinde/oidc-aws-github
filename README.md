@@ -1,6 +1,6 @@
 # Invoke AWS from GitHub Actions using OpenID Connect
 
-This repository allows a specific GitHub repository to invoke actions on an AWS account using OpenID Connect (OIDC).
+This repository demonstrates how to allow a specific GitHub repository to invoke actions on AWS from GitHub Actions using OpenID Connect (OIDC).
 
 ## Deploy to AWS
 
