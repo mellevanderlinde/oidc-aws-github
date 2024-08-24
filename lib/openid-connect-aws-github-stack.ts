@@ -7,19 +7,28 @@ export class OpenidConnectAwsGithubStack extends Stack {
 
     const oidcProvider = new iam.CfnOIDCProvider(this, "GithubOidcProvider", {
       url: "https://token.actions.githubusercontent.com",
+      clientIdList: ["sts.amazonaws.com"],
     });
 
     const conditions: iam.Conditions = {
       StringEquals: {
         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
         "token.actions.githubusercontent.com:sub":
-          "repo:mellevanderlinde/openid-connect-aws-github:ref:refs/heads/non-existing-branch", // TODO change to main branch, first verify that this fails
+          "repo:mellevanderlinde/openid-connect-aws-github:ref:refs/heads/main",
       },
     };
 
-    new iam.Role(this, "GithubOidcRole", {
+    const oidcRole = new iam.Role(this, "GithubOidcRole", {
       roleName: "github-oidc-role",
       assumedBy: new iam.WebIdentityPrincipal(oidcProvider.ref, conditions),
     });
+
+    const lookupRole = iam.Role.fromRoleName(
+      this,
+      "LookupRole",
+      `cdk-hnb659fds-lookup-role-${this.account}-${this.region}`,
+    );
+
+    lookupRole.grantAssumeRole(oidcRole);
   }
 }

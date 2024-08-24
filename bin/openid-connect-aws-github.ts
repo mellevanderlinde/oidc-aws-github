@@ -4,4 +4,6 @@ import { App } from "aws-cdk-lib";
 import { OpenidConnectAwsGithubStack } from "../lib/openid-connect-aws-github-stack";
 
 const app = new App();
-new OpenidConnectAwsGithubStack(app, "OpenidConnectAwsGithubStack");
+new OpenidConnectAwsGithubStack(app, "OpenidConnectAwsGithubStack", {
+  env: { region: "eu-west-1" },
+});

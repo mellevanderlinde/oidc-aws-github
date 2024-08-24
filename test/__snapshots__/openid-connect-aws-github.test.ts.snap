@@ -12,6 +12,9 @@ exports[`Match with snapshot 1`] = `
   "Resources": {
     "GithubOidcProvider": {
       "Properties": {
+        "ClientIdList": [
+          "sts.amazonaws.com",
+        ],
         "Url": "https://token.actions.githubusercontent.com",
       },
       "Type": "AWS::IAM::OIDCProvider",
@@ -25,7 +28,7 @@ exports[`Match with snapshot 1`] = `
               "Condition": {
                 "StringEquals": {
                   "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-                  "token.actions.githubusercontent.com:sub": "repo:mellevanderlinde/openid-connect-aws-github:ref:refs/heads/non-existing-branch",
+                  "token.actions.githubusercontent.com:sub": "repo:mellevanderlinde/openid-connect-aws-github:ref:refs/heads/main",
                 },
               },
               "Effect": "Allow",
@@ -41,6 +44,49 @@ exports[`Match with snapshot 1`] = `
         "RoleName": "github-oidc-role",
       },
       "Type": "AWS::IAM::Role",
+    },
+    "GithubOidcRoleDefaultPolicyDAF7F8F5": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":iam::",
+                    {
+                      "Ref": "AWS::AccountId",
+                    },
+                    ":role/cdk-hnb659fds-lookup-role-",
+                    {
+                      "Ref": "AWS::AccountId",
+                    },
+                    "-",
+                    {
+                      "Ref": "AWS::Region",
+                    },
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "GithubOidcRoleDefaultPolicyDAF7F8F5",
+        "Roles": [
+          {
+            "Ref": "GithubOidcRole20798CD3",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
     },
   },
   "Rules": {
