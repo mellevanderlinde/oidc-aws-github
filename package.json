@@ -10,8 +10,8 @@
     "cdk": "cdk",
     "test": "jest",
     "test:update": "jest -u",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -25,7 +25,7 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
-    "typescript": "~5.5.3"
+    "typescript": "~5.6.2"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.154.1",
