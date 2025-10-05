@@ -6,12 +6,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
-    "cdk": "cdk",
+    "ci": "npm run lint && npm run build && npm run test",
     "test": "jest",
     "test:update": "jest -u",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
