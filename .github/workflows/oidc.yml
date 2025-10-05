@@ -15,7 +15,7 @@ jobs:
         with:
           aws-region: eu-west-1
           role-to-assume: arn:aws:iam::012345678912:role/github-oidc-role
-          
+
       - name: Invoke AWS action
         run: |
           npm ci

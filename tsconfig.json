@@ -1,29 +1,29 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "commonjs",
     "lib": [
       "es2020",
       "dom"
     ],
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "inlineSourceMap": true,
-    "noEmit": true,
-    "inlineSources": true,
     "experimentalDecorators": true,
-    "strictPropertyInitialization": true,
+    "module": "commonjs",
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "declaration": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noEmit": true
   },
   "exclude": [
     "node_modules",

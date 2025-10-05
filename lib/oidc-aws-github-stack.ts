@@ -1,11 +1,14 @@
-import { Stack, StackProps } from "aws-cdk-lib";
+import type { StackProps } from "aws-cdk-lib";
+import type {
+  Conditions,
+} from "aws-cdk-lib/aws-iam";
+import type { Construct } from "constructs";
+import { Stack } from "aws-cdk-lib";
 import {
   CfnOIDCProvider,
-  Conditions,
   Role,
   WebIdentityPrincipal,
 } from "aws-cdk-lib/aws-iam";
-import { Construct } from "constructs";
 
 export class OidcAwsGithubStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
